@@ -70,7 +70,7 @@ class DhcpClient:
             url = f"{self.base_url}/dhcp/scopes/addReservedLease"
             response = requests.post(url, params=params)
             if response.ok:
-                print(f"Added reserved lease for {lease['hardwareAddress']} at {lease['address']}")
+                print(f"{lease['hardwareAddress']:20} {lease['hostName']:20} {lease['address']:15}")
             else:
                 print(f"Failed to add reserved lease for {lease['hardwareAddress']}: {response.text}")
 
